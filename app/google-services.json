@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "543599460970",
+    "firebase_url": "https://moviereview-92906.firebaseio.com",
+    "project_id": "moviereview-92906",
+    "storage_bucket": "moviereview-92906.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543599460970:android:ea6643641d1548ef",
+        "android_client_info": {
+          "package_name": "com.example.lenovo.moviereview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543599460970-hqsvkasipu9k76v138h8ue6e3cm7glg4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQIniFhuHFX6dMoSW3b94afD7it8qYYwQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
