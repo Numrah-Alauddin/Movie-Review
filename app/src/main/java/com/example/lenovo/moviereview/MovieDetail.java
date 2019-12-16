@@ -150,6 +150,7 @@ public class MovieDetail extends YouTubeBaseActivity implements
             mCast = bundle.getString("movieCast");
             mGenre = bundle.getString("genre");
             movieId = bundle.getString("movieId");
+            
             mimage = bundle.get("image").toString();
 
             title.setText(mtitle);

@@ -72,9 +72,11 @@ public class MoviesList extends AppCompatActivity implements SearchView.OnQueryT
 
             @Override
             public void onDelete(Movie movie, int position) {
-                databaseReference.child(movie.getId()).setValue(null);
-                movies.remove(position);
-                adapter.notifyDataSetChanged();
+                if (movie.getId()!=null) {
+                    databaseReference.child(movie.getId()).setValue(null);
+                    movies.remove(position);
+                    adapter.notifyDataSetChanged();
+                }
             }
         });
 

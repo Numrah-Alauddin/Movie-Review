@@ -78,25 +78,26 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference().child("movies");
 
-        databaseReference.child(movie.getId()).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Object avg = dataSnapshot.child("avgRating").getValue();
-                Object viewsCount = dataSnapshot.child("viewsCount").getValue();
-                if (avg != null)
-                    holder.tvRatings.setText(df.format(avg));
-                if (viewsCount!=null) {
-                    String strViews = viewsCount.toString() + (Long.valueOf(viewsCount.toString()) == 1 ? " view" : " views");
-                    holder.tvViews.setText(strViews);
+        if(movie.getId()!=null) {
+            databaseReference.child(movie.getId()).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Object avg = dataSnapshot.child("avgRating").getValue();
+                    Object viewsCount = dataSnapshot.child("viewsCount").getValue();
+                    if (avg != null)
+                        holder.tvRatings.setText(df.format(avg));
+                    if (viewsCount != null) {
+                        String strViews = viewsCount.toString() + (Long.valueOf(viewsCount.toString()) == 1 ? " view" : " views");
+                        holder.tvViews.setText(strViews);
+                    }
                 }
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
-
+                }
+            });
+        }
         holder.tvTitle.setText(movie.getTitle());
 
         Glide.with(holder.movieImage.getContext())
